@@ -1,7 +1,12 @@
-export default class GokResultaat {
+export const RESULTAAT_HOGER = "hoger";
+export const RESULTAAT_LAGER = "lager";
+export const RESULTAAT_JUIST = "juist";
+export const RESULTAAT_GEEN_SPEL = "geenspel";
+
+export class GokResultaat {
     constructor(resultaat, score) {
         this._resultaat = resultaat;
-        this._score = score ? score : null;
+        this._score = score;
     }
 
     get resultaat() {

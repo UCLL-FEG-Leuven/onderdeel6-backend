@@ -1,4 +1,4 @@
-import GokResultaat from "./gok-resultaat.js";
+import { GokResultaat, RESULTAAT_HOGER, RESULTAAT_LAGER, RESULTAAT_JUIST, RESULTAAT_GEEN_SPEL } from "./gok-resultaat.js";
 import Speler from "./speler.js";
 
 const GETAL_VAN = 0;
@@ -68,7 +68,7 @@ export default class GetalRadenSpel {
     doeEenGok(nickname, getal) {
         if (!this._spelBezig) {
             console.log(`Speler ${nickname} heeft een gok gedaan buiten de tijd.`);
-            return new GokResultaat(null);            
+            return new GokResultaat(RESULTAAT_GEEN_SPEL);            
         } else {
             let speler = this._alleSpelers.filter((speler) => speler.nickname === nickname);
             if (speler.length === 0) {
@@ -92,17 +92,17 @@ export default class GetalRadenSpel {
                 // te laag
                 console.log(`Speler ${nickname} heeft te laag gegokt.`);
                 huidigeSpeler.heeftVerkeerdGegokt();
-                return new GokResultaat(-1); 
+                return new GokResultaat(RESULTAAT_HOGER); 
             } else if (getal > this._willekeurigGetal) {
                 // te hoog
                 console.log(`Speler ${nickname} heeft te hoog gegokt.`);
                 huidigeSpeler.heeftVerkeerdGegokt();
-                return new GokResultaat(1); 
+                return new GokResultaat(RESULTAAT_LAGER); 
             } else { 
                 // goed gegokt!
                 huidigeSpeler.heeftGoedGegokt((new Date() - this._spelGestartOp) / 1000);
                 console.log(`Speler ${nickname} heeft goed gegokt: de score is ${huidigeSpeler.score}. Zijn/haar beste score is ${huidigeSpeler.topscore}`);
-                return new GokResultaat(0, huidigeSpeler.score); 
+                return new GokResultaat(RESULTAAT_JUIST, huidigeSpeler.score); 
             }
         }
     }
