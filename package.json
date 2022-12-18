@@ -1,0 +1,14 @@
+{
+  "name": "onderdeel6-start",
+  "version": "0.0.1",
+  "description": "Front end gevorderd: startcode voor de oefeningen van onderdeel 6.",
+  "scripts": {
+    "start": "cd Server & npm run start"
+  },
+  "keywords": [
+    "UCLL",
+    "FEG"
+  ],
+  "author": "UCLL",
+  "license": "UNLICENSED"
+}
