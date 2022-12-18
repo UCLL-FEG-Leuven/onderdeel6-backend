@@ -1,4 +1,4 @@
-﻿Node-Express oefeningen framework: hiervan kan je vertrekken om je frontend gevorderd oefeningen te maken.
+﻿Startfiles voor de oefeningen van onderdeel 6.
 
 Zorg ervoor dat [Node](https://nodejs.org/en/download/) geïnstalleerd is.  
 

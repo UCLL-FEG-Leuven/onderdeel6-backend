@@ -1,5 +1,6 @@
 // const express = require("express") -> in package.json wordt via type="module" aangegeven dat we ES6 module syntax gebruiken
 import express from "express";
+import cors from "cors";
 import { join } from "path"; 
 import __dirname from "./__dirname.js";
 
@@ -8,6 +9,7 @@ import GetalRadenSpel from "./Oefening2/getal-raden-spel.js";
 const app = express();
 const port = process.env.PORT ? process.env.PORT : 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/", express.static(join(__dirname, '..', 'Client', 'Public')));
