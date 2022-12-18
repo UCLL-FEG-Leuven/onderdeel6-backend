@@ -4,7 +4,7 @@
   "description": "Front end gevorderd: startcode voor de oefeningen van onderdeel 6.",
   "type": "module",
   "scripts": {
-    "start": "cd Server & npm run start"
+    "start-local" : "cd Server & npm run start"
   },
   "keywords": [
     "UCLL",
